@@ -1,0 +1,16 @@
+[
+  {
+    "name": "DUMMY PC — DELETE THIS LISTING",
+    "price": "$850",
+    "sold": false,
+    "specs": {
+      "CPU": "Intel Core i7-11700F",
+      "GPU": "RTX 3060",
+      "RAM": "16GB DDR4",
+      "Storage": "1TB SSD",
+      "Motherboard": "MSI B560"
+    },
+    "additional": "Placeholder listing — replace this information or delete this entry before publishing.",
+    "photos": []
+  }
+]

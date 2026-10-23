@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCDAVID.com — Built PCs, Ready to Game</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --site-primary: #b9f227;
+  --site-secondary: #17231d;
+  --site-background: #0b0e0d;
+  --site-on-primary: #11160b;
+  --site-on-secondary: #f1f5ed;
+  --site-on-background: #f1f4ef;
+  --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  --surface: light-dark(#ffffff, #111613);
+  --surface-2: light-dark(#f4f7f2, #171d19);
+  --ink: light-dark(#182019, #f1f4ef);
+  --muted: light-dark(#647066, #9ca79e);
+  --line: light-dark(#dce3db, #2b342d);
+  --accent: var(--site-primary);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--site-font-body); background: var(--site-background); color: var(--site-on-background); }
+.root { min-height: 100vh; width: 100%; background-color: var(--site-background); color: var(--site-on-background); border-radius: 0; overflow: hidden; }
+.wrap { max-width: 1180px; margin: auto; padding: 0 28px; }
+header { border-bottom: 1px solid #ffffff18; }
+.nav { display:flex; align-items:center; justify-content:space-between; min-height:76px; gap:18px; }
+.brand { font-size: 1.2rem; font-weight: 950; letter-spacing: -.06em; color: var(--site-on-background); text-decoration:none; }
+.brand span { color:var(--accent); }
+.nav-right { display:flex; align-items:center; gap:18px; color:#bdc6be; font-size:.88rem; }
+.pill { background:var(--accent); color:var(--site-on-primary); border-radius:999px; padding:10px 15px; text-decoration:none; font-size:.84rem; font-weight:850; }
+.hero { position:relative; padding:72px 0 58px; overflow:hidden; }
+.hero:after { content:""; position:absolute; width:380px; height:380px; right:-50px; top:-130px; border:1px solid #b9f22722; border-radius:50%; box-shadow:0 0 0 42px #b9f22708,0 0 0 84px #b9f22705; opacity:var(--site-decoration-opacity); pointer-events:none; }
+.eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.17em; font-size:.72rem; font-weight:900; }
+h1 { font-family:var(--site-font-heading); font-size:clamp(2.8rem, 6.5vw, 5.4rem); line-height:.98; letter-spacing:-.075em; max-width:800px; margin:18px 0; }
+h1 em { color:var(--accent); font-style:normal; }
+.hero p { color:#b6c0b8; max-width:600px; line-height:1.7; font-size:1.06rem; }
+.hero-actions { display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
+.btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 18px; border-radius:9px; font-weight:850; text-decoration:none; border:1px solid #ffffff2b; color:#f1f4ef; }
+.btn.primary { background:var(--accent); color:#10150a; border-color:var(--accent); }
+.section-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin:28px 0 22px; }
+.section-head h2 { font-size:clamp(1.7rem,3vw,2.4rem); letter-spacing:-.05em; margin:8px 0 0; }
+.section-head p { color:#9da99f; font-size:.9rem; margin:0 0 5px; }
+.inventory { background:var(--surface); color:var(--ink); padding:48px 0 66px; }
+.inventory .eyebrow { color:#5a7f0c; }
+.cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:calc(16px * var(--site-radius-scale)); overflow:hidden; box-shadow:0 8px 28px #0000000a; }
+.photo { height:210px; position:relative; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at 50% 45%,#314c36 0,#19271d 42%,#101512 76%); overflow:hidden; }
+.photo:before { content:""; position:absolute; inset:20px; border:1px solid #b9f22725; border-radius:10px; }
+.pc-illustration { width:112px; height:142px; border:4px solid #687b6b; border-radius:12px; background:linear-gradient(145deg,#1a241c,#080b09); position:relative; box-shadow:0 0 25px #b9f22720; }
+.pc-illustration:before { content:""; position:absolute; left:12px; right:12px; top:12px; bottom:12px; border:2px solid #b9f22780; border-radius:8px; background:repeating-radial-gradient(circle at 50% 30%,#b9f22799 0 2px,#1c3021 3px 8px,#111812 9px 13px); }
+.pc-illustration:after { content:""; position:absolute; width:7px; height:7px; right:7px; bottom:7px; border-radius:50%; background:#b9f227; box-shadow:0 0 12px #b9f227; }
+.photo-label { position:absolute; bottom:14px; left:16px; color:#d6e0d6; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; font-weight:800; }
+.status { position:absolute; top:14px; left:14px; border-radius:6px; padding:7px 10px; font-size:.7rem; font-weight:950; text-transform:uppercase; letter-spacing:.08em; background:var(--accent); color:#12170b; }
+.status.sold { background:#d7dcd8; color:#353c37; }
+.card-body { padding:21px; }
+.card-top { display:flex; justify-content:space-between; align-items:start; gap:10px; }
+.card h3 { margin:0; font-size:1.18rem; letter-spacing:-.035em; }
+.price { font-weight:950; font-size:1.2rem; white-space:nowrap; }
+.specs { display:flex; flex-wrap:wrap; gap:7px; margin:15px 0; }
+.spec { font-size:.72rem; color:var(--muted); background:var(--surface-2); border:1px solid var(--line); padding:6px 8px; border-radius:6px; }
+.card-body p { color:var(--muted); line-height:1.55; font-size:.89rem; min-height:44px; margin:0 0 17px; }
+.card-foot { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:15px; gap:10px; }
+.details { font-size:.85rem; font-weight:850; color:var(--ink); text-decoration:none; }
+.availability { font-size:.75rem; font-weight:900; color:#527a06; }
+.availability.sold { color:#7a817c; }
+.how { padding:52px 0 58px; background:#101512; }
+.how-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
+.how h2 { font-size:2.2rem; line-height:1.05; letter-spacing:-.06em; margin:12px 0; }
+.how p { color:#aab5ac; line-height:1.7; }
+.steps { display:grid; gap:12px; }
+.step { border:1px solid #ffffff20; padding:17px; border-radius:10px; display:flex; gap:14px; align-items:start; }
+.step-num { color:var(--accent); font-weight:950; }
+.step strong { display:block; margin-bottom:4px; }
+.step span { color:#aab5ac; font-size:.88rem; line-height:1.5; }
+footer { padding:28px 0; border-top:1px solid #ffffff1a; color:#96a197; font-size:.8rem; }
+.footer-row { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+@media(max-width:850px) { .cards{grid-template-columns:repeat(2,minmax(0,1fr));} .how-grid{grid-template-columns:1fr;gap:24px;} .hero{padding-top:55px;} }
+@media(max-width:570px) { .wrap{padding:0 18px;} .cards{grid-template-columns:1fr;} .nav-right .nav-link{display:none;} .section-head{align-items:start; flex-direction:column;} .photo{height:230px;} .hero{padding:46px 0;} }
+</style>
+</head>
+<body>
+<div class="root" data-sites-preview-theme="custom">
+<header><div class="wrap nav"><a class="brand" href="#top">PC<span>DAVID</span>.com</a><div class="nav-right"><a class="nav-link" href="#inventory" style="color:inherit;text-decoration:none">Available PCs</a><a class="nav-link" href="#how" style="color:inherit;text-decoration:none">How it works</a><a class="pill" href="mailto:sales@pcdavid.com?subject=PC%20inquiry">Ask about a PC ↗</a></div></div></header>
+<main id="top">
+<section class="hero"><div class="wrap"><div class="eyebrow">Straightforward builds. No mystery parts.</div><h1>Good PCs.<br><em>Ready to roll.</em></h1><p>Clean, tested gaming PCs with the specs up front. Browse what's available, check the photos and details, and reach out if one looks like your next rig.</p><div class="hero-actions"><a class="btn primary" href="#inventory">Browse available PCs ↓</a><a class="btn" href="mailto:sales@pcdavid.com">Contact David</a></div></div></section>
+<section class="inventory" id="inventory"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Current inventory</div><h2>Find your next PC.</h2></div><p>Availability is shown on every listing.</p></div><div class="cards" id="pc-cards"></div></div></section>
+<section class="how" id="how"><div class="wrap how-grid"><div><div class="eyebrow">Simple by design</div><h2>Know what you're getting.</h2><p>Every listing can include a full spec list, honest condition notes, photos of the actual machine, and a clear asking price. When a PC sells, its listing can stay up with a Sold label so visitors can see it’s no longer available.</p><a class="btn primary" href="mailto:sales@pcdavid.com?subject=Question%20about%20a%20PC">Have a question? Get in touch</a></div><div class="steps"><div class="step"><div class="step-num">01</div><div><strong>Pick a build</strong><span>Compare the processor, graphics card, memory, storage, and price.</span></div></div><div class="step"><div class="step-num">02</div><div><strong>Ask for details</strong><span>Send a message to confirm availability or request more photos.</span></div></div><div class="step"><div class="step-num">03</div><div><strong>Listing marked Sold</strong><span>Sold systems remain visible but are clearly marked and no longer presented as available.</span></div></div></div></div></section>
+</main><footer><div class="wrap footer-row"><span>© <span id="year"></span> PCDAVID.com</span><span>Built with care. Specs listed honestly.</span></div></footer>
+</div>
+<script>
+fetch('inventory.json')
+  .then(response => {
+    if (!response.ok) throw new Error('Could not load inventory.json');
+    return response.json();
+  })
+  .then(pcs => {
+    const container = document.getElementById('pc-cards');
+    container.innerHTML = pcs.map((pc, i) => `<article class="card"><div class="photo">${pc.photos && pc.photos.length ? `<img src="${pc.photos[0]}" alt="${pc.name}" style="width:100%;height:100%;object-fit:cover">` : '<div class="pc-illustration" aria-hidden="true"></div>'}<span class="status ${pc.sold?'sold':''}">${pc.sold?'Sold':'Available'}</span><span class="photo-label">PCDAVID / BUILD ${String(i+1).padStart(3,'0')}</span></div><div class="card-body"><div class="card-top"><h3>${pc.name}</h3><div class="price">${pc.price}</div></div><div class="specs">${['CPU','GPU','RAM','Storage','Motherboard'].map(key => `<span class="spec"><strong>${key}:</strong> ${pc.specs[key] || 'Not specified'}</span>`).join('')}</div>${pc.additional ? `<p><strong>Additional:</strong> ${pc.additional}</p>` : ''}<div class="card-foot"><a class="details" href="mailto:sales@pcdavid.com?subject=${encodeURIComponent('Question about '+pc.name)}">Ask about this PC ↗</a><span class="availability ${pc.sold?'sold':''}">${pc.sold?'Not available':'● For sale'}</span></div></div></article>`).join('');
+  })
+  .catch(error => {
+    document.getElementById('pc-cards').innerHTML = '<p>Inventory could not be loaded. Please try again later.</p>';
+    console.error(error);
+  });
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body></html>
