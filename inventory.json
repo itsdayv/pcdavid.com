@@ -2,7 +2,7 @@
   {
     "name": "Gaming PC – RGB",
     "price": "$750",
-    "sold": false,
+    "sold": true,
     "specs": {
       "CPU": "Intel Core i7-13700F (13th Gen)",
       "GPU": "NVIDIA GeForce RTX 3070",
@@ -14,6 +14,23 @@
     "photos": [
       "pcs/pc1/main.jpg",
       "pcs/pc1/p2.jpg"
+    ]
+  },
+  {
+    "name": "Gaming PC – RGB",
+    "price": "$450",
+    "sold": false,
+    "specs": {
+      "CPU": "Intel Core i7-11700F (11th Gen)",
+      "GPU": "NVIDIA GeForce RTX 3060",
+      "RAM": "16GB",
+      "Storage": "1TB SATA SAMSUNG EVO",
+      "Motherboard": "Gigabyte"
+    },
+    "additional": "Gaming PC – RTX 3060, i7-11700F, 16GB RAM, 1TB SATA SSD – RGB",
+    "photos": [
+      "pcs/pc2/pic1.JPEG",
+      "pcs/pc2/front.JPEG"
     ]
   }
 ]
