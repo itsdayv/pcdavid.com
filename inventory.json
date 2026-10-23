@@ -1,16 +1,19 @@
 [
   {
-    "name": "DUMMY PC — DELETE THIS LISTING",
-    "price": "$850",
+    "name": "Gaming PC – RTX 3070, i7-13700F, 32GB DDR5, 1TB NVMe SSD – RGB",
+    "price": "$750",
     "sold": false,
     "specs": {
-      "CPU": "Intel Core i7-11700F",
-      "GPU": "RTX 3060",
-      "RAM": "16GB DDR4",
-      "Storage": "1TB SSD",
-      "Motherboard": "MSI B560"
+      "CPU": "Intel Core i7-13700F (13th Gen)",
+      "GPU": "NVIDIA GeForce RTX 3070",
+      "RAM": "32GB DDR5",
+      "Storage": "1TB NVMe SSD",
+      "Motherboard": "ASRock B760M-C"
     },
-    "additional": "Placeholder listing — replace this information or delete this entry before publishing.",
-    "photos": []
+    "additional": "Gaming PC – RTX 3070, i7-13700F, 32GB DDR5, 1TB NVMe SSD – RGB",
+    "photos": [
+      "/photos/pc1/main.jpg",
+      "/photos/pc1/p2.jpg"
+    ]
   }
 ]
